@@ -1,0 +1,31 @@
+/* Center the navigation - */
+  nav ul {
+  display : flex;
+  justify-content: center;
+  list-style-type : none;
+  padding: 1rem 0;
+  background-color: #333;
+  }
+  nav li a {
+    color:white;
+    text-decoration: none;
+    padding : 0 1.5rem;/* relative units */
+    font-family : sans-serif; /*Font*/
+    }
+    /* Fluid Layout for Index/hobby */
+  .fluid-container {
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+/* fixed layout for resume */  
+  .fixed-container {
+    width: 960px;
+    margin:0 auto;
+    }
+/* Fix image overlap */
+  img {
+   max-width:100%;
+   height: auto;
+   display: block;
+   }
