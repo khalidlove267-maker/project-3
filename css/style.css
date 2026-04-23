@@ -93,4 +93,16 @@ width: 90%;
 width: 960px;
 padding: 0;
 }
+/* Second Media Query: Large Desktops (min-width: 1200px) */
+@media (min-width: 1200px) {
+body {
+background-color: #f4f4f4; /* Change 1 */
+font-size: 1.1rem; /* Change 2 */
+}
+
+h1 {
+color: #b22222; /* Change 3: Firebrick red for a "Beef" theme */
+text-transform: uppercase; /* Change 4 */
+letter-spacing: 2px; /* Change 5 */
+}
 }
