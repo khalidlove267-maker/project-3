@@ -1,47 +1,32 @@
-// This function runs once the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-console.log("JavaScript Loaded Successfully!");
-
-// --- FEATURE 1: JavaScript Picture Slider ---
-const slides = document.querySelectorAll('.slide');
-if (slides.length > 0) {
-let currentSlide = 0;
-
-function showNextSlide() {
-slides[currentSlide].style.display = 'none'; // Hide current
-currentSlide = (currentSlide + 1) % slides.length; // Logic for looping
-slides[currentSlide].style.display = 'block'; // Show next
+// TOOL 1: Dark Mode Toggle
+// This adds a button to the page that flips the colors
+function toggleDarkMode() {
+const element = document.body;
+element.classList.toggle("dark-mode");
 }
 
-// Initialize: Hide all but first, then set interval
-slides.forEach((slide, index) => {
-if (index !== 0) slide.style.display = 'none';
-});
-
-setInterval(showNextSlide, 3000); // Change image every 3 seconds
-}
-});
-
-// --- FEATURE 2: Google Maps API ---
+// TOOL 2 & MAP FEATURES: Google Maps Initialization
 function initMap() {
-// Feature 1: Custom Coordinates
-const myLocation = { lat: 41.8349, lng: -87.6270 };
+// Coordinate for a Chicago location (Portillo's)
+const favoriteSpot = { lat: 41.8922, lng: -87.6350 };
 
+// FEATURE 1: Initialize Map with Custom Zoom and Type
 const map = new google.maps.Map(document.getElementById("map"), {
 zoom: 15,
-center: myLocation,
-mapTypeId: 'terrain' // Feature 2: Different map type
+center: favoriteSpot,
+mapTypeId: 'terrain' // Feature: Custom Map Type
 });
 
-// Feature 3: Custom Marker with Info Window
+// FEATURE 2: Add a Custom Marker
 const marker = new google.maps.Marker({
-position: myLocation,
+position: favoriteSpot,
 map: map,
-title: "My Project Location"
+title: "Best Italian Beef!"
 });
 
+// FEATURE 3: Add an InfoWindow (Pop-up)
 const infoWindow = new google.maps.InfoWindow({
-content: "<h3>Project 3 Landmark</h3><p>This is a custom marker!</p>"
+content: "<h3>Portillo's Beef</h3><p>This is my favorite spot for a dipped beef!</p>"
 });
 
 marker.addListener("click", () => {
