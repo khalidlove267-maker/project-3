@@ -29,3 +29,68 @@
    height: auto;
    display: block;
    }
+   /* 1. Updated Nav: Stacked for easy tapping on mobile */
+nav ul {
+display: flex;
+flex-direction: column; /* CHANGE 1: Vertical stack for mobile */
+align-items: center;
+list-style-type: none;
+padding: 1rem 0;
+background-color: #333;
+}
+
+/* 2. Larger Tap Targets: Better for thumbs */
+nav li a {
+color: white;
+text-decoration: none;
+padding: 0.8rem; /* CHANGE 2: Bigger clickable area */
+font-family: sans-serif;
+display: block;
+}
+
+/* 3. Mobile Fluid Container: More edge-to-edge room */
+.fluid-container {
+width: 95%; /* CHANGE 3: Increased from 90% for small screens */
+margin: 0 auto;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 4. Responsive Fixed Container: No horizontal scrolling */
+.fixed-container {
+width: 100%; /* CHANGE 4: Fluid on mobile so it doesn't break */
+max-width: 960px;
+margin: 0 auto;
+padding: 0 15px; /* CHANGE 5: Side padding so text doesn't hit edges */
+}
+
+/* Original Image Fix */
+img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+/* --- MEDIA QUERY (For Screens 768px and wider) --- */
+
+@media (min-width: 768px) {
+
+/* Return Navigation to horizontal row for Desktop */
+nav ul {
+flex-direction: row;
+justify-content: center;
+}
+
+nav li a {
+padding: 0 1.5rem; /* Return to your original spacing */
+}
+
+/* Return Containers to their original desktop widths */
+.fluid-container {
+width: 90%;
+}
+
+.fixed-container {
+width: 960px;
+padding: 0;
+}
+}
