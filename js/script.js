@@ -1,35 +1,53 @@
-// TOOL 1: Dark Mode Toggle
-// This adds a button to the page that flips the colors
-function toggleDarkMode() {
-const element = document.body;
-element.classList.toggle("dark-mode");
+/* --- TOOL 1: Dark Mode (Unobtrusive) --- */
+const themeBtn = document.getElementById('theme-toggle');
+if (themeBtn) {
+themeBtn.addEventListener('click', () => {
+document.body.classList.toggle("dark-mode");
+});
 }
 
-// TOOL 2 & MAP FEATURES: Google Maps Initialization
+/* --- TOOL 2: Google Maps (Error-Free) --- */
 function initMap() {
-// Coordinate for a Chicago location (Portillo's)
+const mapElement = document.getElementById("map");
+// Only run if the map div exists on the current page
+if (mapElement) {
 const favoriteSpot = { lat: 41.8922, lng: -87.6350 };
-
-// FEATURE 1: Initialize Map with Custom Zoom and Type
-const map = new google.maps.Map(document.getElementById("map"), {
+const map = new google.maps.Map(mapElement, {
 zoom: 15,
 center: favoriteSpot,
-mapTypeId: 'terrain' // Feature: Custom Map Type
+mapTypeId: 'terrain'
 });
 
-// FEATURE 2: Add a Custom Marker
 const marker = new google.maps.Marker({
 position: favoriteSpot,
 map: map,
 title: "Best Italian Beef!"
 });
 
-// FEATURE 3: Add an InfoWindow (Pop-up)
 const infoWindow = new google.maps.InfoWindow({
-content: "<h3>Portillo's Beef</h3><p>This is my favorite spot for a dipped beef!</p>"
+content: "<h3>Portillo's Beef</h3><p>This is my favorite spot!</p>"
 });
 
 marker.addListener("click", () => {
 infoWindow.open(map, marker);
 });
+}
+}
+
+/* --- TOOL 3: Picture Slider Logic --- */
+const slider = document.querySelector('.slider-container');
+if (slider) {
+const images = document.querySelectorAll('.slides img');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+let currentIndex = 0;
+
+function showImage(index) {
+images[currentIndex].classList.remove('active');
+currentIndex = (index + images.length) % images.length;
+images[currentIndex].classList.add('active');
+}
+
+nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
 }

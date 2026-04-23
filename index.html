@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Home - Food in Chicago</title>
-  <link rel="stylesheet" type="text/css" href= "css/reset.css">
-  <link rel="stylesheet" type="text/css" href= "css/style.css">
-  <script src="js/script.js"defer></script>
+<meta charset="utf-8">
+<title>Home - Food in Chicago</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/script.js" defer></script>
 </head>
 <body>
 <header>
-<button onclick="toggleDarkMode()">Switch Theme</button>
-  <nav>
-    <ul>  
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="hobby.html">Bingewatcher</a></li>
-       <li><a href="map.html">Map</a></li>
-  </ul>
-  </nav>
-  </header>
-<div class ="fluid-container"> 
+<button id="theme-toggle">Switch Theme</button>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="resume.html">Resume</a></li>
+<li><a href="hobby.html">Bingewatcher</a></li>
+<li><a href="map.html">Map</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="fluid-container">
 <main>
-  <h1> Italian Beefs: The Staple of Chicago</h1>
-    <img src="images/itbeefs.jpg" alt="delicious sandwich">
-    <p> When you order it should be as follows:</p>
-    <ul>
-      <li>DIPPED</li>
-      <li>CHEESE </li>
-      <li> Hotpeppers</li>
-  </ul>
-  <h2> Where to find the best:</h2>
-  <ul>
-    <li>Portillo's<li>
-    <img src="images/portillo.jpg" alt="P Resturant"> 
-    <li><strong>AL's Beefs</strong><li>
-    <img src="images/alsb.jpg" alt="AL's Parking lot"> 
-    <li><strong>HOMEDEPOT</strong><li>
-    <img src="images/homedepot.webp" alt="outside homedepot"> 
-    <h2> HOMEDEPOT is my favorite. Thank you for coming to my page, and get yourself a Italian Beef.</h2>
-  </ul>
-  </main>
-  </div>
-  </body>
-  </html>
+<h1>Italian Beefs: The Staple of Chicago</h1>
+
+<div class="slider-container">
+<div class="slides">
+<img src="images/itbeefs.jpg" alt="Italian Beef 1" class="active">
+<img src="images/alsb.jpg" alt="Al's Beef">
+<img src="images/homedepot.webp" alt="Home Depot Beef">
+</div>
+<button id="prevBtn" type="button">Prev</button>
+<button id="nextBtn" type="button">Next</button>
+</div>
+
+<p>When you order it should be as follows:</p>
+<ul>
+<li>DIPPED</li>
+<li>CHEESE</li>
+<li>Hotpeppers</li>
+</ul>
+</main>
+</div>
+</body>
+</html>
+
